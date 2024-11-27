@@ -8,4 +8,15 @@
         <servlet-name>Alta</servlet-name>
         <url-pattern>/Alta</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>List</servlet-name>
+        <servlet-class>List</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>List</servlet-name>
+        <url-pattern>/listAlumnos</url-pattern>
+    </servlet-mapping>
+
 </web-app>

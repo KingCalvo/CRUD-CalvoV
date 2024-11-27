@@ -19,7 +19,7 @@ pageEncoding="UTF-8" %>
     >
       <div class="flex items-center w-1/3">
         <img
-          src="../public/LogoTec.png"
+          src="public/LogoTec.png"
           alt="Logo Institución 2"
           class="w-32 h-auto"
         />
@@ -29,7 +29,7 @@ pageEncoding="UTF-8" %>
       </div>
       <div class="flex items-center justify-end w-1/3">
         <img
-          src="../public/itcuautla.png"
+          src="public/itcuautla.png"
           alt="Logo Institución 1"
           class="max-w-[4rem] h-auto"
         />
@@ -43,6 +43,15 @@ pageEncoding="UTF-8" %>
         action="Alta"
         method="POST"
       >
+        <div class="col-span-2 text-center">
+          <a
+            href="listAlumnos"
+            type="submit"
+            class="px-6 py-2 bg-[#1B396A] text-white font-semibold rounded hover:bg-blue-700"
+          >
+            Ver lista de alumnos
+          </a>
+        </div>
         <!-- Datos personales -->
         <fieldset
           id="datos-personales"
