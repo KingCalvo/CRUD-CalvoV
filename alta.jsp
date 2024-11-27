@@ -1,4 +1,5 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" %> -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -39,6 +40,8 @@
     <main class="flex-grow flex justify-center items-start w-full">
       <form
         class="w-[1400px] h-auto p-2 bg-[#ffffff] rounded-lg grid grid-cols-1 md:grid-cols-2"
+        action="Alta"
+        method="POST"
       >
         <!-- Datos personales -->
         <fieldset
@@ -286,16 +289,16 @@
                 <option value="" disabled selected>
                   Selecciona tu semestre
                 </option>
-                <option value="primero">1</option>
-                <option value="segundo">2</option>
-                <option value="tercero">3</option>
-                <option value="cuarto">4</option>
-                <option value="quinto">5</option>
-                <option value="sexto">6</option>
-                <option value="septimo">7</option>
-                <option value="octavo">8</option>
-                <option value="noveno">9</option>
-                <option value="decimo">10</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
               </select>
             </div>
           </div>
@@ -469,6 +472,8 @@
           <button
             id="closeModalButton"
             class="bg-blue-600 text-white text-center px-4 py-2 rounded hover:bg-blue-700"
+            type="submit"
+            value="Guardar"
           >
             Entendido
           </button>
