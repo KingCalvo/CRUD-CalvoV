@@ -20,6 +20,24 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>Delete</servlet-name>
+        <servlet-class>Delete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Delete</servlet-name>
+        <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateForm</servlet-name>
+        <servlet-class>UpdateForm</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateForm</servlet-name>
+        <url-pattern>/UpdateForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>Update</servlet-name>
         <servlet-class>Update</servlet-class>
     </servlet>
@@ -28,13 +46,4 @@
         <url-pattern>/Update</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>Delete</servlet-name>
-        <servlet-class>Delete</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>Delete</servlet-name>
-        <url-pattern>/Delete</url-pattern>
-    </servlet-mapping>
 </web-app>
