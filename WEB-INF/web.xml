@@ -1,0 +1,11 @@
+<web-app>
+    <servlet>
+        <servlet-name>FormTaller3</servlet-name>
+        <servlet-class>FormTaller3</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FormTaller3</servlet-name>
+        <url-pattern>/FormTaller3</url-pattern>
+    </servlet-mapping>
+</web-app>
