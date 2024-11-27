@@ -10,8 +10,9 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="bg-white text-black flex flex-col items-center min-h-screen pt-20">
+        <!-- Header -->
         <header
-        class="fixed top-0 left-0 right-0 w-full bg-[#1B396A] px-4 py-1 shadow-md flex items-center justify-between z-50 h-16 border-b-2 border-blue-950"
+            class="fixed top-0 left-0 right-0 w-full bg-[#1B396A] px-4 py-1 shadow-md flex items-center justify-between z-50 h-16 border-b-2 border-blue-950"
         >
             <div class="flex items-center w-1/3">
                 <img
@@ -21,7 +22,7 @@
                 />
             </div>
             <div class="text-center flex-grow">
-                <h1 class="text-4xl font-bold text-white">Formulario</h1>
+                <h1 class="text-4xl font-bold text-white">Lista de Alumnos</h1>
             </div>
             <div class="flex items-center justify-end w-1/3">
                 <img
@@ -30,29 +31,12 @@
                     class="max-w-[4rem] h-auto"
                 />
             </div>
-       </header>
-        <div class="container bg-white p-6">
-            <!-- Mostrar logs -->
-            <div class="mb-4">
-                <% 
-                    String logs = (String) request.getAttribute("logs");
-                    if (logs != null) {
-                %>
-                <div class="p-4 rounded-md">
-                    <%= logs %>
-                </div>
-                <% } %>
-            </div>
-            
-            <!-- Tabla de alumnos -->
-            <table class="table-auto w-full border-collapse border border-gray-300">
-                <!-- Encabezados y cuerpo de la tabla -->
-            </table>
-        </div>
-    
-        <div class="container bg-white rounded-lg p-6">
+        </header>
+
+        <!-- Main Content -->
+        <div class="container bg-white rounded-lg p-6 mt-20">
             <h1 class="text-2xl font-bold mb-4 text-center">Lista de Alumnos</h1>
-            <table class="table-auto w-full border-collapse">
+            <table class="table-auto w-full border-collapse border border-gray-300">
                 <thead>
                     <tr class="bg-[#1B396A] text-white">
                         <th class="border border-gray-300 px-4 py-2">ID</th>
@@ -63,6 +47,7 @@
                         <th class="border border-gray-300 px-4 py-2">Correo Institucional</th>
                         <th class="border border-gray-300 px-4 py-2">Carrera</th>
                         <th class="border border-gray-300 px-4 py-2">Turno</th>
+                        <th class="border border-gray-300 px-4 py-2">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -80,13 +65,33 @@
                         <td class="border border-gray-300 px-4 py-2"><%= alumno[5] %></td>
                         <td class="border border-gray-300 px-4 py-2"><%= alumno[6] %></td>
                         <td class="border border-gray-300 px-4 py-2"><%= alumno[7] %></td>
+                        <td class="border border-gray-300 px-4 py-2 flex items-center justify-center gap-2">
+                            <!-- Ícono para eliminar -->
+                            <a href="Delete?id=<%= alumno[0] %>">
+                                <img
+                                    src="public/basura.png"
+                                    alt="Eliminar"
+                                    title="Eliminar"
+                                    class="w-8 h-8 cursor-pointer"
+                                />
+                            </a>
+                            <!-- Ícono para editar -->
+                            <a href="UpdateForm?id=<%= alumno[0] %>">
+                                <img
+                                    src="public/editar.png"
+                                    alt="Editar"
+                                    title="Editar"
+                                    class="w-8 h-8 cursor-pointer"
+                                />
+                            </a>
+                        </td>
                     </tr>
                     <% 
                             }
                         } else { 
                     %>
                     <tr>
-                        <td colspan="8" class="text-center border border-gray-300 px-4 py-2">No hay registros</td>
+                        <td colspan="9" class="text-center border border-gray-300 px-4 py-2">No hay registros</td>
                     </tr>
                     <% } %>
                 </tbody>
