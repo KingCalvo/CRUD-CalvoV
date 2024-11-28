@@ -1,49 +1,22 @@
 <web-app>
+    <!-- Mapeo del servlet Alta -->
     <servlet>
         <servlet-name>Alta</servlet-name>
         <servlet-class>Alta</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>Alta</servlet-name>
         <url-pattern>/Alta</url-pattern>
     </servlet-mapping>
 
+    <!-- Mapeo del servlet List -->
     <servlet>
         <servlet-name>List</servlet-name>
         <servlet-class>List</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>List</servlet-name>
-        <url-pattern>/listAlumnos</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>Delete</servlet-name>
-        <servlet-class>Delete</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Delete</servlet-name>
-        <url-pattern>/Delete</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>UpdateForm</servlet-name>
-        <servlet-class>UpdateForm</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>UpdateForm</servlet-name>
-        <url-pattern>/UpdateForm</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>Update</servlet-name>
-        <servlet-class>Update</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Update</servlet-name>
-        <url-pattern>/Update</url-pattern>
+        <url-pattern>/List</url-pattern>
     </servlet-mapping>
 
 </web-app>

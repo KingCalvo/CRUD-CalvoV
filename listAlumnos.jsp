@@ -76,7 +76,7 @@
                                 />
                             </a>
                             <!-- Ícono para editar -->
-                            <a href="UpdateForm?id=<%= alumno[0] %>">
+                            <a href="Update?id=<%= alumno[0] %>">
                                 <img
                                     src="public/editar.png"
                                     alt="Editar"
