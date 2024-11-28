@@ -5,7 +5,7 @@ pageEncoding="UTF-8" %>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario</title>
+    <title>Actualizar - Formulario</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
@@ -41,15 +41,6 @@ pageEncoding="UTF-8" %>
         action="Alta"
         method="POST"
       >
-        <div class="col-span-2 text-center">
-          <a
-            href="listAlumnos"
-            type="submit"
-            class="px-6 py-2 bg-[#1B396A] text-white font-semibold rounded hover:bg-blue-700"
-          >
-            Ver lista de alumnos
-          </a>
-        </div>
         <!-- Datos personales -->
         <fieldset
           id="datos-personales"
