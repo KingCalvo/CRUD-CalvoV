@@ -441,14 +441,15 @@ pageEncoding="UTF-8" %>
                 >Turno: <span class="text-red-700"> *</span></label
               >
               <select
-                id="turno"
-                name="turno"
-                class="w-full px-4 py-2 border rounded focus:ring focus:ring-blue-300"
+                  id="turno"
+                  name="turno"
+                  class="w-full px-4 py-2 border rounded focus:ring focus:ring-blue-300"
               >
-                <option value="" disabled selected>Selecciona tu turno</option>
-                <option value="matutino" <%= "matutino".equals(turno) ? "checked" : "" %>>Matutino</option>
-                <option value="vespertino" <%= "vespertino".equals(turno) ? "checked" : "" %>>Vespertino</option>
+                  <option value="" disabled selected>Selecciona tu turno</option>
+                  <option value="matutino" <%= "matutino".equals(turno) ? "selected" : "" %>>Matutino</option>
+                  <option value="vespertino" <%= "vespertino".equals(turno) ? "selected" : "" %>>Vespertino</option>
               </select>
+
             </div>
           </div>
           <div class="flex flex-wrap -mx-2">
@@ -497,13 +498,13 @@ pageEncoding="UTF-8" %>
                 >Comentarios adicionales:</label
               >
               <textarea
-                id="comentarios-adicionales"
-                name="comentarios-adicionales"
-                placeholder="Escribe tus comentarios adicionales aquí"
-                class="w-full px-4 py-2 border rounded focus:ring focus:ring-blue-300"
-                rows="4"
-                <%= comentariosAdicionales != null ? comentariosAdicionales : "" %>
-              ></textarea>
+                  id="comentarios-adicionales"
+                  name="comentarios-adicionales"
+                  placeholder="Escribe tus comentarios adicionales aquí"
+                  class="w-full px-4 py-2 border rounded focus:ring focus:ring-blue-300"
+                  rows="4"
+              ><%= comentariosAdicionales != null ? comentariosAdicionales : "" %></textarea>
+
             </div>
 
             <!-- Checkbox para recibir información -->

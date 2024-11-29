@@ -3,13 +3,14 @@ import javax.servlet.http.*;
 import java.io.*;
 import java.sql.*;
 
-public class ActualizarTallerServlet extends HttpServlet {
+public class Actualizar extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
         try {
             // Recuperar los valores enviados desde el formulario
+            String id = request.getParameter("id");  // Suponiendo que el ID venga en la solicitud
             String nombre = request.getParameter("nombre-alumno");
             String apellidoPaterno = request.getParameter("apellido-paterno");
             String apellidoMaterno = request.getParameter("apellido-materno");
@@ -32,12 +33,6 @@ public class ActualizarTallerServlet extends HttpServlet {
             String comentariosAdicionales = request.getParameter("comentarios-adicionales");
             boolean recibirInfo = request.getParameter("recibirInfo") != null;
 
-            // Validar que los campos obligatorios no sean nulos o vacíos
-            if (id == null || id.trim().isEmpty()) {
-                out.println("<p>Error: No se proporcionó un ID válido.</p>");
-                return;
-            }
-
             // Conexión a la base de datos
             String url = "jdbc:postgresql://127.0.0.1/demo";
             String usuario = "calvoubuntu";
@@ -47,12 +42,13 @@ public class ActualizarTallerServlet extends HttpServlet {
             Connection conexion = DriverManager.getConnection(url, usuario, password);
 
             // Query de actualización
-            String query = "UPDATE alumnos SET nombre_alumno = ?, apellido_paterno = ?,
-apellido_materno = ?, edad = ?, fecha_nacimiento = ?, sexo = ?, domicilio = ?,
-codigo_postal = ?, ciudad = ?, entidad_federativa = ?, telefono_celular = ?,
-telefono_casa = ?, numero_control = ?, semestre = ?, correo_institucional = ?,
-carrera = ?, turno = ?, correo_personal = ?, curp = ?, comentarios_adicionales =
-?, recibir_info = ? WHERE id = ?;";
+            String query = "UPDATE alumnos SET "
+                + "nombre_alumno = ?, apellido_paterno = ?, apellido_materno = ?, edad = ?, "
+                + "fecha_nacimiento = ?, sexo = ?, domicilio = ?, codigo_postal = ?, ciudad = ?, "
+                + "entidad_federativa = ?, telefono_celular = ?, telefono_casa = ?, numero_control = ?, "
+                + "semestre = ?, correo_institucional = ?, carrera = ?, turno = ?, correo_personal = ?, "
+                + "curp = ?, comentarios_adicionales = ?, recibir_info = ? WHERE id = ?;";
+
 
             PreparedStatement stmt = conexion.prepareStatement(query);
 
@@ -85,7 +81,9 @@ carrera = ?, turno = ?, correo_personal = ?, curp = ?, comentarios_adicionales =
             int filasAfectadas = stmt.executeUpdate();
             if (filasAfectadas > 0) {
                 out.println("<p>Registro actualizado exitosamente.</p>");
-                response.sendRedirect("listAlumnos.jsp");
+                // Redirigir al servlet List para que recupere los registros actualizados
+                response.sendRedirect("listAlumnos");
+
             } else {
                 out.println("<p>Error: No se pudo actualizar el registro.</p>");
             }

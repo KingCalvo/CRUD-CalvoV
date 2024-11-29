@@ -18,4 +18,14 @@
         <servlet-name>List</servlet-name>
         <url-pattern>/listAlumnos</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Actualizar</servlet-name>
+        <servlet-class>Actualizar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Actualizar</servlet-name>
+        <url-pattern>/actualizar</url-pattern>
+    </servlet-mapping>
+
 </web-app>
