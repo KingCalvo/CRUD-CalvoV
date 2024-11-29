@@ -35,7 +35,15 @@
 
         <!-- Main Content -->
         <div class="container bg-white rounded-lg p-6 mt-20">
+            <!-- Botón para Agregar nuevo alumno -->
             <h1 class="text-2xl font-bold mb-4 text-center">Lista de Alumnos</h1>
+            <div class="text-center mb-4">
+                <a href="alta.jsp">
+                    <button class="px-6 py-2 bg-[#1B396A] text-white font-semibold rounded hover:bg-blue-700">
+                        Agregar nuevo alumno
+                    </button>
+                </a>
+            </div>
             <table class="table-auto w-full border-collapse border border-gray-300">
                 <thead>
                     <tr class="bg-[#1B396A] text-white">
@@ -67,7 +75,7 @@
                         <td class="border border-gray-300 px-4 py-2"><%= alumno[7] %></td>
                         <td class="border border-gray-300 px-4 py-2 flex items-center justify-center gap-2">
                             <!-- Ícono para eliminar -->
-                            <a href="Delete?id=<%= alumno[0] %>">
+                            <a href="deleteConfirm.jsp?id=<%= alumno[0] %>">
                                 <img
                                     src="public/basura.png"
                                     alt="Eliminar"

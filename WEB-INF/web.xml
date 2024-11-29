@@ -19,6 +19,7 @@
         <url-pattern>/listAlumnos</url-pattern>
     </servlet-mapping>
 
+    <!-- Mapeo del servlet Actualizar -->
     <servlet>
         <servlet-name>Actualizar</servlet-name>
         <servlet-class>Actualizar</servlet-class>
@@ -28,4 +29,13 @@
         <url-pattern>/actualizar</url-pattern>
     </servlet-mapping>
 
+    <!-- Mapeo del servlet DeleteAlumno -->
+    <servlet>
+        <servlet-name>DeleteAlumno</servlet-name>
+        <servlet-class>DeleteAlumno</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteAlumno</servlet-name>
+        <url-pattern>/deleteAlumno</url-pattern>
+    </servlet-mapping>
 </web-app>
